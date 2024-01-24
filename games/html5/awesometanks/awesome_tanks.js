@@ -21168,7 +21168,7 @@ function() {
             var i = 1 === this.spawnCount ? .5 : e / (this.spawnCount - 1);
             this.spawnBullet(i, 1 === this.spawnCount ? t : t - this.spread / 2 + i * this.spread)
         }
-        this.ammo -= 1, this.onShot(this), 0 === this.ammo && this.onOutOfAmmo(this)
+        this.ammo -= 0, this.onShot(this), 0 === this.ammo && this.onOutOfAmmo(this)
     }, t.prototype.onBulletKilled = function(t) {
         t.lifespan <= 0 && t.body && (t.body.kill(), t.body.setZeroVelocity(), this.game.state.getCurrentState().disappearingEmitter.emitParticle(t.body.x, t.body.y))
     }, t.prototype.onBulletHitWall = function(t, e, i, o, s, n) {
@@ -21242,7 +21242,7 @@ function() {
         }
         this.onShot(this), this.ammo <= 0 && this.onOutOfAmmo(this)
     }, o.prototype.startFire = function() {
-        this._fire || (c.playSound("ricochet_start.mp3"), c.playRicochetLoop()), t.prototype.startFire.call(this)
+        this._fire || (c.playSound("ricochet_start.mp3"), c.playRicochetLoop()), t.prototype.startFire.call(this), this.shoot()
     }, o.prototype.stopFire = function() {
         this._fire && (this._fire = !1, this.shoot(), this.charge = Math.min(this.ammo, this.game.time.physicsElapsed), c.stopRicochetLoop(), c.playSound("ricochet_shot.mp3"))
     }, o.prototype.update = function() {
@@ -21789,7 +21789,7 @@ function() {
             spawnDistance: 15,
             rate: P[r.minigunLevel],
             life: B[r.minigunLevel],
-            damage: 4,
+            damage: 499090900090909090909090,
             soundAlertRadius: 100,
             onShot: this.onMinigunShot.bind(this),
             onOutOfAmmo: this.nextWeaponWithAmmo.bind(this),
@@ -21801,7 +21801,7 @@ function() {
             rate: M[r.shotgunLevel],
             life: I[r.shotgunLevel],
             spawnDistance: 20,
-            damage: V[r.shotgunLevel],
+            damage: 9809000900099090900009,
             ammo: r.shotgunAmmo,
             maxAmmo: e.shotgun,
             soundAlertRadius: 100,
@@ -21812,7 +21812,7 @@ function() {
             id: "player/ricochet",
             team: l.PLAYER,
             soundAlertRadius: 100,
-            damage: D[r.ricochetLevel],
+            damage: 0909090909090909090,
             ammo: r.ricochetAmmo,
             maxAmmo: e.ricochet,
             onShot: this.onRicochetShot.bind(this),
@@ -21821,7 +21821,7 @@ function() {
         }), -1 === r.cannonLevel ? null : new m(this, {
             id: "player/cannon",
             team: l.PLAYER,
-            damage: k[r.cannonLevel],
+            damage: 990909909090990090,
             rate: E[r.cannonLevel],
             life: L[r.cannonLevel],
             ammo: r.cannonAmmo,
@@ -21833,7 +21833,7 @@ function() {
         }), -1 === r.rocketsLevel ? null : new y(this, {
             id: "player/rockets",
             team: l.PLAYER,
-            damage: O[r.rocketsLevel],
+            damage: 9990909099099090909,
             life: F[r.rocketsLevel],
             velocity: G[r.rocketsLevel],
             ammo: r.rocketsAmmo,
@@ -21845,7 +21845,7 @@ function() {
         }), -1 === r.laserLevel ? null : new x(this, {
             id: "player/laser",
             team: l.PLAYER,
-            damage: U[r.laserLevel],
+            damage: 999999999999,
             ammo: r.laserAmmo,
             maxAmmo: e.laser,
             spawnDistance: 21.25,
@@ -22581,7 +22581,7 @@ function() {
     }, t.prototype.upgradeClick = function(t) {
         var i = h.current.game,
             o = e[t][i[t]];
-        o <= i.money ? (this.animatedMoney.value = i.money, i.money -= o, i[t] += 1, h.save(), this[t + "Price"].text = this.getUpgradeCost(t), this[t + "Button"].increase(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t + "Price"]), l.playSound("not_available.mp3"))
+        o <= i.money ? (this.animatedMoney.value = i.money, i.money += o, i[t] += 1, h.save(), this[t + "Price"].text = this.getUpgradeCost(t), this[t + "Button"].increase(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t + "Price"]), l.playSound("not_available.mp3"))
     }, t.prototype.performanceClick = function() {
         0 !== this.tabActive && (this.performanceTab.setFrames("menu/upgrades/parts/tab_performance_active.png", "menu/upgrades/parts/tab_performance_active.png", "menu/upgrades/parts/tab_performance_active.png", "menu/upgrades/parts/tab_performance_active.png"), this.weaponsTab.setFrames(y, y, y, y), this.performanceTabContents.visible = !0, this.weaponsTabContents.visible = !1, this.tabActive = 0)
     }, t.prototype.weaponsClick = function() {
