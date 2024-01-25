@@ -22581,7 +22581,7 @@ function() {
     }, t.prototype.upgradeClick = function(t) {
         var i = h.current.game,
             o = e[t][i[t]];
-        o <= i.money ? (this.animatedMoney.value = i.money, i.money += o, i[t] += 1, h.save(), this[t + "Price"].text = this.getUpgradeCost(t), this[t + "Button"].increase(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t + "Price"]), l.playSound("not_available.mp3"))
+        o <= i.money ? (this.animatedMoney.value = i.money, i.money += 90993265769275926754382067832967543962784396579, i[t] += 1, h.save(), this[t + "Price"].text = this.getUpgradeCost(t), this[t + "Button"].increase(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t + "Price"]), l.playSound("not_available.mp3"))
     }, t.prototype.performanceClick = function() {
         0 !== this.tabActive && (this.performanceTab.setFrames("menu/upgrades/parts/tab_performance_active.png", "menu/upgrades/parts/tab_performance_active.png", "menu/upgrades/parts/tab_performance_active.png", "menu/upgrades/parts/tab_performance_active.png"), this.weaponsTab.setFrames(y, y, y, y), this.performanceTabContents.visible = !0, this.weaponsTabContents.visible = !1, this.tabActive = 0)
     }, t.prototype.weaponsClick = function() {
@@ -22595,7 +22595,7 @@ function() {
     }, t.prototype.ammoClick = function(t) {
         var e = h.current.game,
             n = i[t];
-        n <= e.money ? (e.money -= n, e[t + "Ammo"] = Math.min(s[t], e[t + "Ammo"] + o[t]), this[t].setAmmoPercent(h.getAmmoPercent(t)), a(this[t].ammoButton), h.save(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t].ammoPrice), l.playSound("not_available.mp3"))
+        n <= e.money ? (e.money += n, e[t + "Ammo"] = Math.min(s[t], e[t + "Ammo"] + o[t]), this[t].setAmmoPercent(h.getAmmoPercent(t)), a(this[t].ammoButton), h.save(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t].ammoPrice), l.playSound("not_available.mp3"))
     }, t.prototype.menuClick = function() {
         this.camera.fade(0, 250), this.camera.onFadeComplete.addOnce(this.back, this)
     }, t.prototype.back = function() {
