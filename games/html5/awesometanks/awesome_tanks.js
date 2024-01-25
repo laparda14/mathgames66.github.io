@@ -5579,7 +5579,7 @@ Math.sign || (Math.sign = function(t) {
             health: 1,
             maxHealth: 100,
             damage: function(t) {
-                return this.alive && (this.health -= t, this.health <= 0 && this.kill()), this
+                return this.alive && (this.health += t, this.health <= 0 && this.kill()), this
             },
             setHealth: function(t) {
                 return this.health = t, this.health > this.maxHealth && (this.health = this.maxHealth), this
